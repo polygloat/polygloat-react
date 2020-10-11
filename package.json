@@ -22,8 +22,7 @@
   ],
   "dependencies": {
     "regenerator-runtime": "^0.13.3",
-    "webpack-cli": "^3.3.10",
-    "polygloat": "^0.0.12"
+    "webpack-cli": "^3.3.10"
   },
   "peerDependencies": {
     "react": "^16.12.0"

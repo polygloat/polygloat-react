@@ -1,22 +1,4 @@
-plugins {
-    id("com.github.node-gradle.node") version "2.2.0"
-}
-
-def npmTask(taskName, workingDir, commandArgs, group) {
-    task(taskName, type: NpmTask, group: group) {
-        doFirst {
-            this.project.node.nodeModulesDir = file(workingDir)
-        }
-        description = "Installs all dependencies from package.json"
-        workingDir = file(workingDir)
-        args = commandArgs
-        inputs.files("${workingDir}/package.json", "${workingDir}/package-lock.json")
-        outputs.dir("${workingDir}/node_modules")
-    }
-}
-
-npmTask("polygloatReactNpmInstall", project.projectDir, ["install"], "Polygloat React")
-npmTask("polygloatReactDevelop", project.projectDir, ["run", "develop", "--watch"], "Polygloat React")
+import io.polygloat.node.PolygloatNodePlugin
 
 idea {
     module {
@@ -25,3 +7,11 @@ idea {
         excludeDirs += file('lib')
     }
 }
+
+apply plugin: PolygloatNodePlugin
+
+polygloatNpm{
+    library = true
+    linkablePackages = ["polygloat"]
+}
+
