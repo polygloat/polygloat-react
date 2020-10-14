@@ -1,7 +1,6 @@
 const path = require('path');
 
-const WebpackBundleAnalyzer = require("webpack-bundle-analyzer")
-    .BundleAnalyzerPlugin;
+const WebpackBundleAnalyzer = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 module.exports = env => {
     const isDevelopment = env.mode === "development";
@@ -38,7 +37,8 @@ module.exports = env => {
         ],
         externals: {
             react: "react",
-            "react-dom": "react-dom"
+            "react-dom": "react-dom",
+            "polygloat/ui": "polygloat/ui"
         }
     });
 
