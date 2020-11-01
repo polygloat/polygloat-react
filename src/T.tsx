@@ -25,5 +25,5 @@ export const T: FunctionComponent<TProps> = (props: TProps) => {
         }
     }, [props])
 
-    return <span>{translated}</span>;
+    return <>{translated}</>;
 }

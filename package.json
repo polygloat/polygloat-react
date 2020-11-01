@@ -1,6 +1,6 @@
 {
   "name": "polygloat-react",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "React implementation for polygloat localization framework",
   "main": "dist/polygloat-react.umd.js",
   "types": "lib/index.d.ts",
@@ -23,7 +23,7 @@
   "dependencies": {
     "regenerator-runtime": "^0.13.3",
     "webpack-cli": "^3.3.10",
-    "polygloat": "^0.1.1"
+    "polygloat": "^0.2.0"
   },
   "peerDependencies": {
     "react": "^16.12.0"
