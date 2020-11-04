@@ -42,5 +42,5 @@ module.exports = env => {
         }
     });
 
-    return [makeTarget("umd"), makeTarget("window")];
+    return [makeTarget("commonjs"), makeTarget("umd"), makeTarget("window")];
 };
