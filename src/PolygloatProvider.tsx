@@ -17,9 +17,11 @@ export const PolygloatProvider: FunctionComponent<PolygloatProviderProps> = (pro
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        console.log("start");
         polygloat.run().then(() => setLoading(false));
 
         return () => {
+            console.log("stop");
             polygloat.stop();
         }
     }, []);

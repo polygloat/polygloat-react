@@ -2,7 +2,7 @@
   "name": "polygloat-react",
   "version": "1.0.0-alpha.0",
   "description": "React implementation for polygloat localization framework",
-  "main": "dist/polygloat-react.commonjs.js",
+  "main": "dist/polygloat-react.umd.js",
   "types": "lib/index.d.ts",
   "declaration": true,
   "directories": {
