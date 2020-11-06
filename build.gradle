@@ -12,6 +12,6 @@ apply plugin: PolygloatNodePlugin
 
 polygloatNpm{
     library = true
-    linkablePackages = ["polygloat"]
+    linkablePackages = ["@polygloat/core"]
 }
 

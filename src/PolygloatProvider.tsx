@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {FunctionComponent, ReactNode, useEffect, useState} from 'react';
-import {Polygloat, PolygloatConfig} from "polygloat";
+import {Polygloat, PolygloatConfig} from "@polygloat/core";
 
 type ContextValueType = PolygloatConfig & { polygloat: Polygloat };
 
