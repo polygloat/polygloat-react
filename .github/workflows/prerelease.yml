@@ -1,12 +1,12 @@
-name: Build
+name: Prerelease
 
 on:
   push:
     branches:
-     - 'prerelease-*'
+      - 'prerelease-*'
 
 jobs:
-  build:
+  main:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -14,14 +14,24 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
+
+      - name: Install proper core version
+        run: |
+          source .buildversions
+          npm install @polygloat/core@${CORE_VERSION}
+
       - run: npm install
-#      - name: Test
-#        run: npm run test
+
+      - name: Build
+        run: npm run build
+
+      - name: Test
+        run: npm run test
 
       - name: Set git globals
         run: |
-            git config --local user.email "machine@polygloat.io"
-            git config --local user.name "Polygloat Machine"
+          git config --local user.email "machine@polygloat.io"
+          git config --local user.name "Polygloat Machine"
 
       - name: Version
         run: npm version prerelease
@@ -33,9 +43,7 @@ jobs:
           branch: ${{ github.ref }}
           tags: true
 
-      - name: Build
-        run: npm run build
-
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
+          access: public

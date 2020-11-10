@@ -3,9 +3,7 @@ import {FunctionComponent, ReactNode, useEffect, useState} from 'react';
 import {Polygloat, PolygloatConfig} from "@polygloat/core";
 
 type ContextValueType = PolygloatConfig & { polygloat: Polygloat };
-
 export const PolygloatProviderContext = React.createContext<ContextValueType>(null);
-
 type PolygloatProviderProps = PolygloatConfig & { loadingFallback?: ReactNode };
 
 export const PolygloatProvider: FunctionComponent<PolygloatProviderProps> = (props) => {
@@ -17,11 +15,9 @@ export const PolygloatProvider: FunctionComponent<PolygloatProviderProps> = (pro
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        console.log("start");
         polygloat.run().then(() => setLoading(false));
 
         return () => {
-            console.log("stop");
             polygloat.stop();
         }
     }, []);
