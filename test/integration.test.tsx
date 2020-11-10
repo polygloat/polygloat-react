@@ -19,8 +19,8 @@ describe("integration", () => {
 
             render(
                 <PolygloatProvider>
-                    <T>sampleApp.english_text_one</T>
-                    <T>sampleApp.not_found</T>
+                    <div><T>sampleApp.english_text_one</T></div>
+                    <div><T>sampleApp.not_found</T></div>
                 </PolygloatProvider>);
         })
 
