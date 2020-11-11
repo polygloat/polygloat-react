@@ -33,6 +33,12 @@ jobs:
           git config --local user.email "machine@polygloat.io"
           git config --local user.name "Polygloat Machine"
 
+      - name: Commit updated build versions
+        run: |
+          git add package.json
+          git add package-lock.json
+          git commit -m "Updating dependencies"
+
       - name: Version
         run: npm version prerelease
 
