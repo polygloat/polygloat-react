@@ -39,7 +39,7 @@
     "@babel/preset-env": "^7.7.4",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.7.4",
-    "@polygloat/core": "^1.0.0-alpha.12",
+    "@polygloat/core": "^1.0.0-alpha.7",
     "@polygloat/ui": "file:../../ui",
     "@testing-library/dom": "^7.24.5",
     "@testing-library/jest-dom": "^5.11.4",
